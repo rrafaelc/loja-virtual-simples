@@ -30,7 +30,8 @@ Uma loja virtual no estilo **E-commerce** desenvolvida para facilitar compras e 
 ---
 
 ## 📖 Histórias de Usuários
-- **🛠 Como administrador:** Quero ter a capacidade de remover um produto cadastrado no sistema.
+- Rafael 4 **🛠 Como administrador:**, eu quero adicionar novos produtos ao catálogo.
+- Eric 6 **🛠 Como administrador:** Quero ter a capacidade de remover um produto cadastrado no sistema.
 
 ---
 
