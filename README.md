@@ -39,7 +39,7 @@ Uma loja virtual no estilo **E-commerce** desenvolvida para facilitar compras e 
 - Rafael 4 **🛠 Como administrador:**, eu quero adicionar novos produtos ao catálogo.
 - Iago 5 **🛠 Como administrador:**, eu quero editar informações dos produtos.
 - Eric 6 **🛠 Como administrador:** Quero ter a capacidade de remover um produto cadastrado no sistema.
-
+- Luan **🛠 Como cliente:**, Eu quero poder visualizar os produtos cadastrados, para que eu consiga escolher um para comprar.
 ---
 
 🎯 **Objetivo:** Criar uma aplicação robusta, funcional e de fácil uso para facilitar a interação entre vendedores e compradores em um ambiente virtual seguro e eficiente.  
