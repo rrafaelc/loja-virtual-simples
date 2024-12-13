@@ -35,11 +35,11 @@ Uma loja virtual no estilo **E-commerce** desenvolvida para facilitar compras e 
 
 ## 📖 Histórias de Usuários
 
+- Luan 1 **🛠 Como cliente:**, Eu quero poder visualizar os produtos cadastrados, para que eu consiga escolher um para comprar.
 - Renan 2 **🛠 Como cliente:**, eu quero adicionar/remover produtos no carrinho, para planejar minha compra.
 - Rafael 4 **🛠 Como administrador:**, eu quero adicionar novos produtos ao catálogo.
 - Iago 5 **🛠 Como administrador:**, eu quero editar informações dos produtos.
 - Eric 6 **🛠 Como administrador:** Quero ter a capacidade de remover um produto cadastrado no sistema.
-
 ---
 
 🎯 **Objetivo:** Criar uma aplicação robusta, funcional e de fácil uso para facilitar a interação entre vendedores e compradores em um ambiente virtual seguro e eficiente.  
