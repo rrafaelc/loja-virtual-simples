@@ -30,6 +30,7 @@ Uma loja virtual no estilo **E-commerce** desenvolvida para facilitar compras e 
 ---
 
 ## 📖 Histórias de Usuários
+- Renan 2 **🛠 Como cliente:**, eu quero adicionar/remover produtos no carrinho, para planejar minha compra.
 - Rafael 4 **🛠 Como administrador:**, eu quero adicionar novos produtos ao catálogo.
 - Eric 6 **🛠 Como administrador:** Quero ter a capacidade de remover um produto cadastrado no sistema.
 
