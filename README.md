@@ -13,8 +13,7 @@
 
 ## 🚀 Tecnologias Utilizadas  
 
-- **Node.js**  
-- **React**  
+- **Next.js**
 - **PostgreSQL**
 
 ---
