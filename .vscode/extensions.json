@@ -5,6 +5,7 @@
     "editorconfig.editorconfig",
     "mikestead.dotenv",
     "mhutchie.git-graph",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "prisma.prisma",
   ]
 }
