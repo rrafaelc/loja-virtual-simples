@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:windows": "npm i && concurrently \"docker-compose up\" \"npm run dev\"",
+    "dev:linux": "npm i && concurrently \"docker compose up\" \"npm run dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint app --ext ts,tsx,js,jsx --report-unused-disable-directives --max-warnings 0",
@@ -21,6 +23,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.1.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.17",
     "eslint-config-prettier": "^9.1.0",

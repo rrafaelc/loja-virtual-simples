@@ -1,25 +1,4 @@
 services:
-  nextjs:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '3000:3000'
-    environment:
-      DATABASE_URL: postgresql://postgres:postgres@db:5432/nextjs_dev
-    command: >
-      sh -c "
-      if grep -q 'model' prisma/schema.prisma; then
-        echo 'Running Prisma migrations...';
-        npx prisma migrate deploy;
-        npx prisma generate;
-      else
-        echo 'No models found in schema.prisma. Skipping Prisma.';
-      fi &&
-      npm run dev"
-    depends_on:
-      - db
-
   db:
     image: postgres:15
     environment:
