@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 export default function CadastrarProdutos() {
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
-  const [produtos, setProdutos] = useState([]);
+  const [produtos, setProdutos] = useState<any>([]);
 
   // Carrega os produtos salvos do Local Storage ao montar o componente
   useEffect(() => {
