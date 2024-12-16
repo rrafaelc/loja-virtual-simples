@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
@@ -41,8 +42,10 @@ export default function Home() {
               >
                 {/* Imagem do Produto */}
                 <div className="h-56 bg-gray-300 relative">
-                  <img
-                    src="https://via.placeholder.com/300x300?text=Produto" // Imagem genérica de produto
+                  <Image
+                    width={300}
+                    height={300}
+                    src="/produto.jpg"
                     alt={produto.nome}
                     className="w-full h-full object-cover"
                   />
@@ -59,16 +62,6 @@ export default function Home() {
                     onClick={() => adicionarAoCarrinho(produto)}
                     className="flex items-center justify-center bg-blue-500 text-white py-2 px-4 rounded-md w-full hover:bg-blue-600 transition-colors"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width="20"
-                      height="20"
-                      fill="white"
-                      className="mr-2"
-                    >
-                      <path d="M7 4V2H3V4H2V5H3V19C3 19.55 3.45 20 4 20H17C17.55 20 18 19.55 18 19V5H19V4H18V2H14V4H7ZM4 19V5H17V19H4ZM7 4H14V2H7V4Z" />
-                    </svg>
                     Adicionar ao Carrinho
                   </button>
                 </div>
@@ -78,22 +71,6 @@ export default function Home() {
         ) : (
           <p className="text-gray-500 text-center text-xl">Nenhum produto cadastrado ainda.</p>
         )}
-      </div>
-
-      {/* Ícone de Carrinho de Compras usando SVG */}
-      <div className="fixed bottom-6 right-6 bg-blue-500 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-blue-600">
-        <a href="/carrinho">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="30"
-            height="30"
-            fill="white"
-            className="transition-transform transform hover:scale-110"
-          >
-            <path d="M7 4V2H3V4H2V5H3V19C3 19.55 3.45 20 4 20H17C17.55 20 18 19.55 18 19V5H19V4H18V2H14V4H7ZM4 19V5H17V19H4ZM7 4H14V2H7V4Z" />
-          </svg>
-        </a>
       </div>
     </main>
   );
