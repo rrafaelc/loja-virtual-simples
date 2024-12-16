@@ -14,6 +14,12 @@ export default function CadastrarProdutos() {
     }
   }, []);
 
+  const handleRemoverProduto = (index: number) => {
+    const novaLista = produtos.filter((_, i) => i !== index);
+    setProdutos(novaLista);
+    localStorage.setItem('produtos', JSON.stringify(novaLista));
+  };
+
   const handleAdicionarProduto = () => {
     if (nome.trim() && preco) {
       const novoProduto = { nome, preco };
@@ -68,9 +74,18 @@ export default function CadastrarProdutos() {
         {produtos.length > 0 ? (
           <ul className="space-y-2">
             {produtos.map((produto, index) => (
-              <li key={index} className="flex justify-between p-2 border-b border-gray-300">
+              <li
+                key={index}
+                className="flex justify-between items-center p-2 border-b border-gray-300"
+              >
                 <span className="font-medium">{produto.nome}</span>
                 <span className="text-gray-600">R$ {produto.preco}</span>
+                <button
+                  onClick={() => handleRemoverProduto(index)}
+                  className="ml-4 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md"
+                >
+                  Remover
+                </button>
               </li>
             ))}
           </ul>
