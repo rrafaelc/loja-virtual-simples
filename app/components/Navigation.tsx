@@ -8,28 +8,14 @@ export const Navigation = () => {
           <Link href="/" className="font-bold">
             CompreJa
           </Link>
-
-          <Link href="/categorias" className="font-bold">
-            Categorias
-          </Link>
-
-          <Link href="/ofertas" className="font-bold">
-            Ofertas
-          </Link>
-        </div>
-
-        <div className="flex-grow flex items-center gap-2">
-          <input
-            type="text"
-            placeholder="Buscar produtos, marcas e muito mais"
-            className="w-full max-w-md p-2 rounded-lg"
-          />
-          <div>Lupa</div>
         </div>
 
         <div className="flex gap-4">
           <Link href="/carrinho" className="font-bold">
             Carrinho
+          </Link>
+          <Link href="/cadastrar-produtos" className="font-bold">
+            Cadastrar produtos
           </Link>
         </div>
       </div>
