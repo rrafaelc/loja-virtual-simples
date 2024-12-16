@@ -5,6 +5,7 @@ export default function CadastrarProdutos() {
   const [nome, setNome] = useState('');
   const [preco, setPreco] = useState('');
   const [produtos, setProdutos] = useState<any>([]);
+  const [editIndex, setEditIndex] = useState<number | null>(null);
 
   // Carrega os produtos salvos do Local Storage ao montar o componente
   useEffect(() => {
@@ -23,7 +24,18 @@ export default function CadastrarProdutos() {
   const handleAdicionarProduto = () => {
     if (nome.trim() && preco) {
       const novoProduto = { nome, preco };
-      const novaLista = [...produtos, novoProduto];
+      let novaLista;
+
+      if (editIndex !== null) {
+        // Atualiza o produto existente
+        novaLista = produtos.map((produto: any, index: number) =>
+          index === editIndex ? novoProduto : produto,
+        );
+        setEditIndex(null);
+      } else {
+        // Adiciona um novo produto
+        novaLista = [...produtos, novoProduto];
+      }
 
       // Atualiza o estado e salva no Local Storage
       setProdutos(novaLista);
@@ -32,6 +44,13 @@ export default function CadastrarProdutos() {
       setNome('');
       setPreco('');
     }
+  };
+
+  const handleEditarProduto = (index: number) => {
+    const produto = produtos[index];
+    setNome(produto.nome);
+    setPreco(produto.preco);
+    setEditIndex(index);
   };
 
   return (
@@ -65,7 +84,7 @@ export default function CadastrarProdutos() {
         onClick={handleAdicionarProduto}
         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md"
       >
-        Adicionar Produto
+        {editIndex !== null ? 'Atualizar Produto' : 'Adicionar Produto'}
       </button>
 
       {/* Lista de Produtos */}
@@ -78,14 +97,24 @@ export default function CadastrarProdutos() {
                 key={index}
                 className="flex justify-between items-center p-2 border-b border-gray-300"
               >
-                <span className="font-medium">{produto.nome}</span>
-                <span className="text-gray-600">R$ {produto.preco}</span>
-                <button
-                  onClick={() => handleRemoverProduto(index)}
-                  className="ml-4 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md"
-                >
-                  Remover
-                </button>
+                <div>
+                  <span className="font-medium">{produto.nome}</span>
+                  <span className="text-gray-600"> - R$ {produto.preco}</span>
+                </div>
+                <div>
+                  <button
+                    onClick={() => handleEditarProduto(index)}
+                    className="mr-2 bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-1 px-2 rounded-md"
+                  >
+                    Editar
+                  </button>
+                  <button
+                    onClick={() => handleRemoverProduto(index)}
+                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded-md"
+                  >
+                    Remover
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
