@@ -43,3 +43,11 @@ Uma loja virtual no estilo **E-commerce** desenvolvida para facilitar compras e 
 ---
 
 🎯 **Objetivo:** Criar uma aplicação robusta, funcional e de fácil uso para facilitar a interação entre vendedores e compradores em um ambiente virtual seguro e eficiente.
+
+✅ CI/CD e Deploy
+
+O projeto utiliza CI/CD para garantir a qualidade e eficiência no desenvolvimento. As ferramentas e processos incluem:
+
+ESLint: Para análise de código e garantia das boas práticas de desenvolvimento.
+
+Vercel: Deploy automático e hospedagem da aplicação, facilitando a distribuição da loja virtual.
