@@ -14,6 +14,14 @@
 ## 🚀 Tecnologias Utilizadas
 
 - **Next.js**
+- **React**
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Git**
+- **GitHub**
+- **Vercel**
+- **ESLint**
 
 ---
 
@@ -26,8 +34,8 @@ Uma loja virtual no estilo **E-commerce** desenvolvida para facilitar compras e 
 ## 📅 Plano de Desenvolvimento
 
 - **🗓 Segunda-feira (16/12/2024):** Elaboração do Front-End da aplicação.
-- **🗓 Terça-feira (17/12/2024):** Desenvolvimento da API e integração com o Back-End.
-- **🗓 Quarta-feira (18/12/2024):** União das duas partes e realização de testes finais.
+- **🗓 Terça-feira (17/12/2024):** Criação da apresentação.
+- **🗓 Quarta-feira (18/12/2024):** Apresentação.
 
 ---
 
