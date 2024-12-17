@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 export default function Carrinho() {
   const [carrinho, setCarrinho] = useState<any[]>([]);
+  const [compraFinalizada, setCompraFinalizada] = useState(false); // Estado para exibir mensagem de sucesso
 
   // Carrega os itens do carrinho do Local Storage ao montar o componente
   useEffect(() => {
@@ -24,12 +25,23 @@ export default function Carrinho() {
     localStorage.setItem('carrinho', JSON.stringify(novoCarrinho));
   };
 
+  // Função para finalizar a compra
+  const handleFinalizarCompra = () => {
+    setCarrinho([]); // Limpa o carrinho
+    localStorage.removeItem('carrinho'); // Remove o carrinho do localStorage
+    setCompraFinalizada(true); // Define o estado de compra finalizada
+  };
+
   return (
     <main className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-8 text-center text-gray-900">Carrinho de Compras</h1>
 
-        {carrinho.length > 0 ? (
+        {compraFinalizada ? (
+          <div className="text-center">
+            <p className="text-green-600 text-2xl font-semibold">Compra finalizada com sucesso!</p>
+          </div>
+        ) : carrinho.length > 0 ? (
           <div>
             <ul className="space-y-4">
               {carrinho.map((produto, index) => (
@@ -57,6 +69,16 @@ export default function Carrinho() {
             <div className="mt-6 flex justify-between items-center border-t pt-4">
               <span className="text-xl font-bold">Total:</span>
               <span className="text-xl font-semibold">R$ {calcularTotal()}</span>
+            </div>
+
+            {/* Botão de Finalizar Compra */}
+            <div className="mt-6 text-center">
+              <button
+                onClick={handleFinalizarCompra}
+                className="bg-green-500 text-white py-2 px-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition"
+              >
+                Finalizar Compra
+              </button>
             </div>
           </div>
         ) : (
