@@ -17,6 +17,7 @@
 - **React**
 - **HTML**
 - **CSS**
+- **TypeScript**
 - **JavaScript**
 - **Git**
 - **GitHub**
